@@ -1,0 +1,18 @@
+pl_health: 300
+NormalTank_health: 30;score+=100
+SuperTank_health: 120;score+=400
+LasterTank_health: 150;score+=700
+bu_power: 30
+Laster_power: 60{for pl is 90}
+Mine_power: 150{just for pl}color:
+
+
+many{
+    pl:1;"M",color:blue
+    NormalTank:15;"CMD",color:red,white
+    SuperTank:4;"CMD",color:green,bule
+    LasterTank:1;"CMD",color:cyan,magenta
+    bu:0~40;color:yellow
+    Laster:" s\n s\n s","~~~";color:cyan,yellow
+    obstacle:1;"\\",color:black,white
+}
