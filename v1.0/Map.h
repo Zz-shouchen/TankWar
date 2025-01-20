@@ -2,6 +2,7 @@
 #define _MAP_H_
 #include "Game.h"
 #include "Obstacle.h"
+
 class Map {
 public:
     Game* game;
