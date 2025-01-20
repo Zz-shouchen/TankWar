@@ -2,6 +2,7 @@
 #define _TANK_H_
 #include "Game.h"
 #include "Item.h"
+
 class Tank : public Item {
 public:
     Game* game;
