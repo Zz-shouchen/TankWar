@@ -39,14 +39,11 @@ void Map::update_map1(){
 }
 
 void Map::update_map_rand(){
-
     int d=nseed%(MAXROW-2)+1;
     int x=nseed%(MAXCOL-4)+2;
-    
     game->obs.push_back(new Obstacle(game,d,x-1));
     game->obs.push_back(new Obstacle(game,d,x+1));
     game->obs.push_back(new Obstacle(game,d,x));
-
     size_t nseed_push=nseed<<3-1;
     nseed=nseed_push xor nseed_privous;
     nseed_privous=nseed;
