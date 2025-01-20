@@ -16,7 +16,6 @@
 #include <unistd.h>
 #include <string.h>
 
-
 Game::Game() {
     gui.init();
     gui.clear();
@@ -133,22 +132,13 @@ bool Game::update() {
         Laser_update_count=0;
     }
     else laserTank_can_move=true;
-
-
-
     if(current_tank_num<4 && All_current_leave_num>0)add_tank();
     gui.redraw(); //draw things
-
-
     if(All_current_leave_num==0 && current_tank_num==0){
         win();
         return false;
     }
-
-    if (gamedt()) {
-        return false;//game->restart
-    }
-
+    if (gamedt())return false;//game->restart
     return true;
 }
 
@@ -176,7 +166,7 @@ bool Game::gamedt(){
                 gui.clear();
                 gui.end();
                 exit(0);
-                }
+            }
             usleep(1000000);
         }
         score=0;
@@ -263,16 +253,10 @@ void Game::add_tank(){
 
 void Game::hit(Tank *t, Item *i){
     if(i->namei==laser){
-        if(t->namei==player){
-            t->health-=LAS_PL_POWER;
-        }
-        else if(t->namei!=lasertank){
-            t->health-=LAS_POWER;
-        }
+        if(t->namei==player)t->health-=LAS_PL_POWER;
+        else if(t->namei!=lasertank)t->health-=LAS_POWER;
     }
-    else if(i->namei==bullet){
-        t->health-=BU_POWER;
-    }
+    else if(i->namei==bullet)t->health-=BU_POWER;
     else if(i->namei==mine && t->namei==player)pl->health-=MINE_POWER;
 }
 
@@ -297,7 +281,7 @@ void Game::win(){
             gui.clear();
             gui.end();
             exit(0);
-            }
+        }
         usleep(1000000);
     }
 }
@@ -329,9 +313,7 @@ bool Game::get_seed(){
     else gui.prMsg(MAXROW/2-4, MAXCOL/2-18, seed);
     gui.prMsg(MAXROW/2-3, MAXCOL/2-18, "Press Enter to start");
     c='a';
-    while(c!='\n'){
-        c=getch();
-    }
+    while(c!='\n')c=getch();
     Map* map=new Map(this,MAXROW,MAXCOL,seed_num);
     map->update();
     delete map;
@@ -347,4 +329,3 @@ bool Game::coll_obs_check(int r, int c){
     }
     return false;
 }
-
