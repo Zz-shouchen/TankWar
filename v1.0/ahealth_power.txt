@@ -6,8 +6,7 @@ bu_power: 30
 Laster_power: 60{for pl is 90}
 Mine_power: 150{just for pl}color:
 
-
-many{
+{
     pl:1;"M",color:blue
     NormalTank:15;"CMD",color:red,white
     SuperTank:4;"CMD",color:green,bule
