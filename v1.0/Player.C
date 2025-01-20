@@ -47,7 +47,6 @@ void Player::update(int key){
     case 'j':
         if(game->Laser_exist==false)game->Laser_add(row,col,toward);
         break;
-
 //
     default:
         break;
