@@ -2,6 +2,7 @@
 #define _MEDICALKIT_H_
 #include "UnmoveItem.h"
 #include "Game.h"
+
 class MedicalKit : public UnmoveItem {
 public:
     bool is_taken=false;
