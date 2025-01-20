@@ -20,7 +20,7 @@ void LaserTank::update(int){
     if(move_privious>=5)randx=rand()%3+8;
     if(shoot_privious<=0){su=3;shoot_privious++;};
 
-    if(rand()%5==0&&is_mineing==false&&laser_privious>=4){
+    if(rand()%5==0&&is_mineing==false&&laser_privious>=4&&game->Laser_exist==false){
         game->Laser_add(row,col,toward);
         shoot_privious=0;
         game->laserTank_can_move=false;
