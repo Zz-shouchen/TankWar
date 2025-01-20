@@ -9,5 +9,4 @@ public:
     virtual void update(int);
     virtual bool out();
 };
-
 #endif
