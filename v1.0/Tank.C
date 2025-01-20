@@ -1,6 +1,7 @@
 #include "Tank.h"
 
 void Tank::update(int){
+
 }
 
 bool Tank::out(){
