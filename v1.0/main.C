@@ -9,6 +9,7 @@
 using namespace std;
 
 int play_game(int score_pr);
+
 int main(){
     srand(time(0));
     initscr();//initialize curses
