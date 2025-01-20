@@ -1,8 +1,10 @@
 #ifndef _GUI_H_
 #define _GUI_H_
 #include <ncurses.h>
+
 int const MAXCOL=80;
 int const MAXROW=30;
+
 class Gui {
     size_t row;
     size_t col;
