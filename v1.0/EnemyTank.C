@@ -8,7 +8,6 @@ void EnemyTank::update(int){
 
 }
 
-
 bool EnemyTank::boundary(){
     switch(toward){
         case UP:
