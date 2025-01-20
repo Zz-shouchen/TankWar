@@ -31,9 +31,6 @@ void NormalTank::update(int){
     // if(collide(game->pl->row,game->pl->col))game->pl->health-=10;
 }
 
-
-
-
 //CMD//UP
 
 //CWD//DOWN
