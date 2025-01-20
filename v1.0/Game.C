@@ -90,7 +90,7 @@ bool Game::update() {
             delete *ti;
             ti = tanks.erase(ti);
         }
-        ti++;
+        else ti++;
     }
     if(!obs.empty()){
         list<Obstacle*>::iterator oi = obs.begin();
@@ -100,25 +100,31 @@ bool Game::update() {
         }
     }
     list<RemoveItem*>::iterator ii = reitems.begin();
-    while (ii != reitems.end() ) {
+    while ((ii != reitems.end()) && (*(ii)!=NULL)) {
         (*ii)->update(c);
         if ((*ii)->out() == true) {
             delete *ii;
             ii = reitems.erase(ii);
         }
         else if(((*ii)->namei)==medicalkit){
+            bool flag=false;
             for(int i=-1;i<2;i++){
                 for(int j=-1;j<2;j++){
-                    if((*ii)->row+i==pl->row && (*ii)->col+j==pl->col){
+                    if((*ii)->row+i==pl->row && (*ii)->col+j==pl->col && flag==false){//gdb:Program received signal SIGSEGV, Segmentation fault.
                         delete *ii;
+                        flag=true;
                         med_count--;
                         ii = reitems.erase(ii);
+                        ii--;
                         if(pl->health<300)pl->health=300;
                     }
+                    if(flag)break;
                 }
+                if(flag)break;
             }
+            ii++;
         }
-        ii++;
+        else ii++;
     }
     if(Laser_exist && Laser_update_count <3)Laser_update(c);
     else if(Laser_exist){
