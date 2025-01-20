@@ -1,6 +1,7 @@
 CC = g++
 CCFLAGS = -g 
 CCLIBS = -lncurses
+
 mygame: main.o Gui.o Game.o Item.o Player.o Tank.o RemoveItem.o Bullet.o UnmoveItem.o MedicalKit.o Laser.o EnemyTank.o NormalTank.o SuperTank.o Mine.o LaserTank.o Obstacle.o Map.o
 	$(CC) $(CCFLAGS) -o mygame main.o Gui.o Game.o Item.o Player.o Tank.o RemoveItem.o Bullet.o UnmoveItem.o MedicalKit.o Laser.o EnemyTank.o NormalTank.o SuperTank.o Mine.o LaserTank.o Obstacle.o Map.o $(CCLIBS)
 
