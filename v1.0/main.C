@@ -26,7 +26,6 @@ int main(){
 
 int play_game(int score_pr) {
     struct timeval time_now {};
-
     gettimeofday(&time_now, NULL);
     time_t oldTime = (time_now.tv_sec * 1000) + (time_now.tv_usec / 1000);
     time_t currentTime =  oldTime;
