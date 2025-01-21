@@ -1,6 +1,7 @@
 代码说明
 暂无详细完整的注释。
 由一人完成。
+需要一定的环境。
 
 游戏说明
 坦克属性，子弹属性我放在ahealth_power.txt里，abuild.sh是方便执行make clean, make, ./mygame 的文件。
