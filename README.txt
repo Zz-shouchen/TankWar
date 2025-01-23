@@ -1,10 +1,11 @@
 代码说明
 暂无详细完整的注释。
-由一人完成。
 需要一定的环境。
+改变文件后请重新make clean,make,或执行abuild.sh。
+执行abuild.sh前请执行 chmod 777 abuild.sh
 
 游戏说明
-坦克属性，子弹属性我放在ahealth_power.txt里，abuild.sh是方便执行make clean, make, ./mygame 的文件。
+坦克属性，子弹属性我放在ahealth_power.txt里。
 输入seed，当seed为0或1时map为提前准备好的地图，为其他数时map根据seed产生。
 初始血量为300，显示百分数；
 作弊键：
