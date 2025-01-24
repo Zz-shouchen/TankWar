@@ -1,3 +1,4 @@
+// www.trainsimchina.com/Session7/Gui.C
 #include <ncurses.h>
 #include "Gui.h"
 #include <cstring>
