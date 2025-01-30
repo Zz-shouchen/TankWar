@@ -8,7 +8,7 @@
 #include "Game.h"
 using namespace std;
 
-size_t play_game(size_t score_pr);
+size_t play_game(size_t score_pr,Game* game);
 
 int main(){
     srand(time(0));
@@ -19,24 +19,25 @@ int main(){
     size_t score_pr=0;
     start_color();
     while(true){
-        score_pr=play_game(score_pr);
+        Game* g=new Game();
+        score_pr=play_game(score_pr,g);
+        delete g;
     }
     return 0;
 }
 
-size_t play_game(size_t score_pr) {
+size_t play_game(size_t score_pr,Game* game) {
     struct timeval time_now {};
     gettimeofday(&time_now, NULL);
     time_t oldTime = (time_now.tv_sec * 1000) + (time_now.tv_usec / 1000);
     time_t currentTime =  oldTime;
-    Game game;
-    game.score=score_pr;
+    game->score=score_pr;
     bool se=true;
     while(se){
         gettimeofday(&time_now, NULL);
         currentTime = (time_now.tv_sec * 1000) + (time_now.tv_usec / 1000);
         if (currentTime - oldTime < 50) {usleep(25);continue;}
-        se=game.get_seed();
+        se=game->get_seed();
         oldTime = currentTime;
     }
     bool re=true;
@@ -44,8 +45,8 @@ size_t play_game(size_t score_pr) {
         gettimeofday(&time_now, NULL);
         currentTime = (time_now.tv_sec * 1000) + (time_now.tv_usec / 1000);
         if (currentTime - oldTime < 50) {usleep(25);continue;}
-        re = game.update();
+        re = game->update();
         oldTime = currentTime;
     }
-    return game.score;
+    return game->score;
 }
