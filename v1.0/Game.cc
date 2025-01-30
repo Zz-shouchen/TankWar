@@ -163,8 +163,40 @@ bool Game::gamedt(){
             time_ed++;
             int c = gui.get();
             if (c == 'q'){
-                gui.clear();
+                gui.clear();    
                 gui.end();
+                if(reitems.empty() == false){
+                    list<RemoveItem*>::iterator ii = reitems.begin();
+                    while (ii != reitems.end() ) {
+                        delete *ii;
+                        ii++;
+                    }
+                }
+                reitems.clear();
+                if(tanks.empty() == false){
+                    list<Tank*>::iterator ti = tanks.begin();
+                    while (ti != tanks.end() ) {
+                        delete *ti;
+                        ti++;
+                    }
+                }
+                tanks.clear();
+                if(obs.empty() == false){
+                    list<Obstacle*>::iterator oi = obs.begin();
+                    while (oi != obs.end() ) {
+                        delete *oi;
+                        oi++;
+                    }
+                }
+                obs.clear();
+                if(lasers.empty() == false){
+                    list<Laser*>::iterator li = lasers.begin();
+                    while (li != lasers.end() ) {
+                        delete *li;
+                        li++;
+                    }
+                }
+                lasers.clear();
                 exit(0);
             }
             usleep(1000000);
