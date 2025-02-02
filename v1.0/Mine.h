@@ -5,8 +5,8 @@
 class Mine : public UnmoveItem {
 public:
     Game* game;
-    bool exist=true;
-    Mine(Game* g, int x, int y): game(g),UnmoveItem(g,x,y,mine){};
+    bool exist = true;
+    Mine(Game* g, int x, int y): game(g), UnmoveItem(g, x, y, mine){};
     void update(int);
     bool Bomb_check();
     bool out();

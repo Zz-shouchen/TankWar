@@ -5,8 +5,8 @@
 
 class MedicalKit : public UnmoveItem {
 public:
-    bool is_taken=false;
-    MedicalKit(Game* game, int x, int y):UnmoveItem(game, x, y, medicalkit){}
+    bool is_taken = false;
+    MedicalKit(Game* game, int x, int y): UnmoveItem(game, x, y, medicalkit){}
     void update(int);
     bool out();
 };

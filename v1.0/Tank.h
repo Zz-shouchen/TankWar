@@ -8,9 +8,9 @@ public:
     Game* game;
     int health;
     towards toward;
-    Tank(Game* g,int x,int y,int health,towards tow,name n): Item(g,x,y,n), game(g), health(health), toward(tow) {};
+    Tank(Game* g, int x, int y, int he, towards tow, name n): Item(g, x, y, n), game(g), health(he), toward(tow) {};
     virtual void update(int);
     bool out();
-    bool collide(int,int);
+    bool collide(int, int);
 };
 #endif

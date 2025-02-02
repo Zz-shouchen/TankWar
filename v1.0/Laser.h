@@ -5,7 +5,7 @@
 
 class Laser : public RemoveItem {
     Game* game;
-    towards towe;
+    towards towe = UP;
 public:
     Laser(Game* game, int x, int y,towards di): RemoveItem(game,x, y,laser), game(game), towe(di) {};
     void update(int);

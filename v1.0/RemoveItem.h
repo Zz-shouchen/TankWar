@@ -6,7 +6,7 @@
 class RemoveItem : public Item {
 public:
     Game* game;
-    RemoveItem(Game* game, int x, int y,name n): Item(game,x, y, n), game(game) {}
+    RemoveItem(Game* game, int x, int y,name n): Item(game, x,  y,  n), game(game) {}
     virtual void update(int);
     virtual bool out();
 };

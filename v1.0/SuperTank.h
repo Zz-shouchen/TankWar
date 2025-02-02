@@ -4,9 +4,9 @@
 
 class SuperTank : public EnemyTank {
 public:
-    bool is_mineing=false;
+    bool is_mineing = false;
     Game* game;
-    SuperTank(Game* g, int x, int y,towards t):EnemyTank(g,x,y,SUP_HEALTH,t,supertank),game(g){}
+    SuperTank(Game* g, int x, int y,towards t):EnemyTank(g, x, y, SUP_HEALTH, t, supertank), game(g){}
     void update(int);
 };
 #endif

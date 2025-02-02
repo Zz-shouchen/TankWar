@@ -2,9 +2,9 @@
 #include "Item.h"
 
 void RemoveItem::update(int){
-
+    return;//do nothing
 }
 
 bool RemoveItem::out(){
-    return false;
+    return false;//do nothing
 }
