@@ -147,7 +147,7 @@ void EnemyTank::pursue(int catc){
                 toward=RIGHT;
             }
         }
-        if(rand()%4==0){
+        if((rand()+1)%4==0){
             game->reitems.push_back(new Bullet(game,row,col,toward));
             shoot_privious=0;
         }

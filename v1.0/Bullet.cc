@@ -32,7 +32,7 @@ void Bullet::update(int){
     list<Tank*>::iterator it=game->tanks.begin();
     while(it!=game->tanks.end()){
         if((*it)->namei==player && (*it)->row==row && (*it)->col==col){game->hit(*it,this);row=MAXROW+1;col=MAXCOL+100;}
-        else if((*it)->collide(row,col)){game->hit(*it,this);row=MAXROW+100;}
+        else if((*it)->namei!=player && (*it)->collide(row,col)){game->hit(*it,this);row=MAXROW+100;}
         it++;
     }
 }
